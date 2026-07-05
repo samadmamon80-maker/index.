@@ -1,0 +1,89 @@
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Collect Coin</title>
+ </head>
+<div style="background-image:url('c:/index/png');  width: 1000px; height: 500; border-radius: 12px; margin: 0 auto; padding: 20px; box-shadow: 0 6px 18px rgba(0,0,0,0.2);">
+<h3 style="color: red; text-align: center;">SAMAD GAME</h3>
+<body  style="text-align: center;">
+    <h1 style="color: orange;">COLLECT COINS</h1>
+    <h2 id="score">0</h2>
+     <h2>time: <span id="timer">45</span>s</h2>
+     <hr  style="height: 10px; background-color:aliceblue;  border: none; opacity:0.7;">
+ <marquee id="coinmarquee" scrollamount="15" scrolldelay="85" direction="right">
+        <button  style="fomt-size:large;" onclick="collectcoin()">     🚗 💨    </button>
+        </marquee>  
+ <hr  style="height: 10px; background-color:aliceblue;  border: none; opacity:0.7;">
+ 
+
+ 
+    
+<hr  style="height: 10px; background-color:aliceblue;  border: none; opacity:0.7;">
+ 
+ <marquee id="coinmarquee" scrollamount="16" scrolldelay="40">
+        <button style="fomt-size:larger;" onclick="collectcoin()"> 🚗   💨</button> 
+</marquee>
+ <hr  style="height: 10px; background-color:aliceblue;  border: none; opacity:0.7;">
+ 
+ 
+ <br> 
+
+   
+   
+   <h4 id="msg">Collect +20 coins to win</h4>
+    
+
+
+           
+   
+              <a href="file:///C:/Users/Laptopify/Desktop/samad23.html"><button>back to Google page  </button></a>
+
+
+        
+            </div>
+
+
+
+    <script>
+         let coin = 0;
+ let time = 45;
+
+ let gameactive = true;
+ let marquee=document.getElementById("coinaMarquee");
+ let timerInterval = setInterval(function() {
+            if (time > 0 && gameactive) {
+                time--;
+                document.getElementById("timer").innerHTML = time;
+            } else {
+
+                gameactive = false;
+                document.getElementById("msg").innerHTML = "<h3>Time's up! You collected " + coin + " coins.</h3>";
+                document.getElementById("msg").style.color = "red";
+            }
+        }, 1000);
+        function collectcoin(){
+            coin = coin + 1;
+            document.getElementById("score").innerHTML = coin;
+
+            if (coin === +5) {
+                document.getElementById("msg").innerHTML = " <h3> You have collected +10 coins! Keep going! +20  coins more to go! </h3> ";
+                document.getElementById("msg").style.color = "orange";
+            }
+            if(coin=== +20){
+                document.getElementById("msg").innerHTML = "<h3>   Winner winner chicken dinner 🐓</h3> ";
+                document.getElementById("msg").style.color = "green";
+             
+            }
+        
+        
+        
+        }
+        
+    
+    
+    </script>
+</body>
+</html>
